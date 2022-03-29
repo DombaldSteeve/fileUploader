@@ -16,10 +16,23 @@ export class UploaderComponent implements OnInit {
   afuConfig: AngularFileUploaderConfig = {
     id: 112233,
     multiple: true,
-    formatsAllowed: 'movie/*',
+    formatsAllowed: '.mp4, .avi',
+    maxSize: 1,
     autoUpload: false,
     uploadAPI: {
       url: 'https://slack.com/api/files.upload',
+      method:"POST",
     },
+    replaceTexts: {
+      selectFileBtn: 'Selectionner document',
+      resetBtn: 'Réinitialiser',
+      uploadBtn: 'Télécharger',
+      dragNDropBox: 'Drag N Drop',
+      attachPinBtn: 'Attach Files...',
+      afterUploadMsg_success: 'Téléchargé avec succès !',
+      afterUploadMsg_error: 'Le téléchargement a échoué !',
+      sizeLimit: 'Taille limite'
+    }
   };
+
 }

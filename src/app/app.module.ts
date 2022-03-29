@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UploaderComponent } from './uploader/uploader.component';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     AngularFileUploaderModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
