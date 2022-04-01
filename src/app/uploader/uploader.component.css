@@ -1,1 +1,6 @@
-
+#fileInput {
+  border-radius: 20px;
+  color: rgb(212, 57, 212);
+  background-color: rgba(127, 255, 212, 0.952);
+  padding: 10px;
+}

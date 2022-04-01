@@ -8,7 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UploaderComponent } from './uploader/uploader.component';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +20,7 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     UploaderComponent,
     HomeComponent,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,11 @@ import {MatCardModule} from '@angular/material/card';
     AngularFileUploaderModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

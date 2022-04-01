@@ -1,10 +1,41 @@
 
 <mat-card>
 
-  <mat-card-title>Main Title</mat-card-title>
-  <mat-card-subtitle>Sub Title</mat-card-subtitle>
+    <h2>Uploader Material</h2>
 
-  <angular-file-uploader [config]="afuConfig"></angular-file-uploader>
+    <!-- <button type="button" mat-raised-button color="accent" (click)="fileInput.click()">Choose File</button>
+    <input type="hidden" (change)="onFileSelected(event)" #fileInput type="file" id="fileInput"> -->
+
+    <!-- <input type="file" (change)="onFileSelected($event)">
+    <button mat-raised-button color="accent" type="button" (click)="onUpload()">Upload</button> -->
+
+      <!-- <input
+      style='display: none'
+      #fileInput
+      type="file"
+      (change)="onFileSelected($event)">
+      <button mat-raised-button color="accent" (click)="fileInput.click()">Pick file</button>
+      <button mat-raised-button color="accent" type="button" (click)="onUpload()">Upload</button> -->
+
+      <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+
+
+        <div class="form-group">
+            <label for="file">Deposer un fichier ici :</label>
+            <input
+                formControlName="file"
+                id="file"
+                type="file"
+                class="form-control"
+                (change)="onFileChange($event)">
+            <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+
+                <div *ngIf="f['file'].errors && f['file'].errors['required']">File is required.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" [disabled]="myForm.invalid" type="submit">Submit</button>
+    </form>
 
 </mat-card>
-
