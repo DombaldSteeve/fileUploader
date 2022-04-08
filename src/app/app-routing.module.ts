@@ -7,7 +7,8 @@ const routes: Routes = [
   { path:"home" , component: HomeComponent },
   { path:"" , redirectTo: "home", pathMatch:'full' },
   // { path: "redirectBtn", component: AppComponent },
-  { path: "fileUploader", component: UploaderComponent },
+  { path: "uploader", component: UploaderComponent },
+  
 ];
 
 @NgModule({
