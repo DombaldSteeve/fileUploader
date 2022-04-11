@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { ComprecupComponent } from './comprecup/comprecup.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     AppComponent,
     UploaderComponent,
     HomeComponent,
+    ComprecupComponent,
   ],
   imports: [
     BrowserModule,

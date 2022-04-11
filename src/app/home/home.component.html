@@ -1,22 +1,13 @@
 <div class="titre">
   <h1>Bienvenu sur le You tube des anges !</h1>
 </div>
-<button mat-raised-button color="accent" type="button" routerLink="/uploader">Déposer un fichier</button>
+<button mat-raised-button class="btnColor" type="button" routerLink="/uploader">Déposer un fichier</button>
+
+<br>
+
+  <mat-form-field class="txtColor" appearance="fill">
+    <mat-label class="txtColor">Titre</mat-label>
+    <input matInput class="txtColor" placeholder="titre de votre vidéo">
+  </mat-form-field>
 
 
-<table class="input" cellspacing="2">
-  <tr>
-    <td>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>First name</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </td>
-    <td>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Long Last Name That Will Be Truncated</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </td>
-  </tr>
-</table>

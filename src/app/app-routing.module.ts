@@ -4,11 +4,10 @@ import { HomeComponent } from './home/home.component';
 import { UploaderComponent } from './uploader/uploader.component';
 
 const routes: Routes = [
-  { path:"home" , component: HomeComponent },
-  { path:"" , redirectTo: "home", pathMatch:'full' },
+
   // { path: "redirectBtn", component: AppComponent },
-  { path: "uploader", component: UploaderComponent },
-  
+  { path: "uploader/:id/:token", component: UploaderComponent },
+
 ];
 
 @NgModule({
