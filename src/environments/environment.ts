@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://slack.com/api/files.upload'
+  url: 'http://localhost:4000/posts'
 };
 
 /*

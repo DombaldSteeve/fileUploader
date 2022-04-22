@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { AngularFileUploaderConfig } from 'angular-file-uploader';
 import { environment } from '../../environments/environment';
+import Post from '../model/post';
+import { InjectableService } from '../services/injectable/injectable.service';
 
 @Component({
   selector: 'app-uploader',
@@ -9,28 +11,38 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./uploader.component.css']
 })
 export class UploaderComponent {
-/**
- *
- */
+
+  posts!: Post[];
   url: string = environment.url;
+
   afuConfig: AngularFileUploaderConfig = {
     id: 112233,
     multiple: false,
-    formatsAllowed: 'video/*',
-    autoUpload: true,
-    maxSize: 10,
+    formatsAllowed: 'image/*',
+    autoUpload: false,
+    maxSize: 20,
     uploadAPI: {
       url: this.url,
     },
   };
 
-  constructor(private root: ActivatedRoute) {
+  constructor(private root: ActivatedRoute, private is: InjectableService) {
     console.log(this.root.snapshot.paramMap.get("id"));
     console.log(this.root.snapshot.paramMap.get("token"));
-    console.log(this.url + "/" + this.root.snapshot.paramMap.get("id"));
-    this.url = this.url + "/" + this.root.snapshot.paramMap.get("id");
-    this.afuConfig.uploadAPI.url = this.url;
     console.log(this.afuConfig.uploadAPI.url);
+
+  }
+
+  ngOnInit() {
+    this.is.getVideo().subscribe((data: Post[] | any) => {
+      console.log(data);
+
+      this.posts = data;
+    });
+  }
+
+  monUpload(event: any) {
+    console.log(event);
 
   }
 

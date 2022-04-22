@@ -1,13 +1,26 @@
-<h1>Page de depôt</h1>
 <mat-card>
 
-    <h2>Uploader Material</h2>
+  <h1>Page de depôt</h1>
 
-    <angular-file-uploader
-      [config]="afuConfig">
-    </angular-file-uploader>
+  <!-- Afficher  la saisie du mail et du mdp + bouton de validation si validation ok, alors rendre visible le composent angular-file-uplodaer ngIf
+    + récupéré par le service (observable) l'ID et le token pour le passer au composent angular file uploader (modifier afu config)
+    si pas identifié, mettre un message ' identification erreur ' et rendre invisible le uploader mais permettre de revenir (boutton) sur une URL retour .env/environnement
+    penser a mettre a jour environnement prod -->
+  <input type="text" name="Titre de votre vidéo" placeholder="Titre de votre vidéo" style="color: black;">
+  <br>
+  <br>
+  <textarea name="Description de votre vidéo" placeholder="Description de votre vidéo" cols="50" rows="5" style="resize: none; color: black;"></textarea>
+  <br>
+  <br>
+  <angular-file-uploader
+    [config]="afuConfig"
+    (fileSelected)="monUpload($event)">
+
+  </angular-file-uploader>
 
 </mat-card>
+
 <br>
+<!-- Retour appel urlRetour .env -->
 <button mat-raised-button color="accent" type="button" routerLink="/">Retour</button>
 

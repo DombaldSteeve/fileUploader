@@ -7,6 +7,9 @@ const routes: Routes = [
 
   // { path: "redirectBtn", component: AppComponent },
   { path: "uploader/:id/:token", component: UploaderComponent },
+  { path: "uploader", component: UploaderComponent },
+  { path: "", redirectTo:"/uploader", pathMatch: "full" }
+
 
 ];
 
